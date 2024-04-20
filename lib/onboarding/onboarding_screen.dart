@@ -76,28 +76,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: _buildPageIndicator(),
                     ),
-                    32.horizontalSpace,
+                    32.verticalSpace,
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 40.0),
                       child: DefaultBtn(
                         press: () {
                           // Get.off(() => const SignUpSelection());
                         },
-                        label: 'Sign up',
+                        label: 'Get Started',
                       ),
                     ),
-                    16.horizontalSpace,
-                    TextButton(
-                        onPressed: () {
-                          // Get.off(() => const SignInSelection());
-                        },
-                        child: Text(
-                          'Login',
-                          style: TextStyle(
-                            color: kPrimary,
-                            fontSize: 14.sp,
-                          ),
-                        ))
+                    // 16.horizontalSpace,
                   ],
                 ),
               ),
