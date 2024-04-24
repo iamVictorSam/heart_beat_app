@@ -129,11 +129,10 @@ Widget page1() {
           child: Stack(
             children: [
               Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                  ),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                   child: Image.asset(
-                    'assets/Images/onboarding_images/gallery_slide1.png',
+                    'assets/heart-edited-Photoroom (3).png',
                     width: Get.width,
                     fit: BoxFit.cover,
                   )),
@@ -158,9 +157,9 @@ Widget page1() {
         ),
         Gap(20.h),
         SizedBox(
-          width: 250,
+          width: 280,
           child: Text(
-            'Discover, Create and Connect',
+            'Heart Rate Monitor',
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 24.sp, fontWeight: FontWeight.w600, color: textDark),
@@ -170,7 +169,7 @@ Widget page1() {
         SizedBox(
           width: 250.w,
           child: Text(
-            'A community for fashion designers, enthusiasts and more.',
+            'Track your pulse easily with your camera.',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 14.sp, color: textDarkAsh),
           ),
@@ -188,17 +187,16 @@ Widget page2() {
           height: 400.h,
           child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 60),
-              child: Image.asset(
-                  'assets/Images/onboarding_images/gallery_slide.png')),
+              child: Image.asset('assets/heart-edited-Photoroom.png')),
         ),
 
         // Placeholder()
-        // Image.asset('assets/Images/onboarding_images/gallery_slide.png'),
+        // Image.asset('assets/heart-edited-Photoroom (2).png'),
         Gap(20.h),
         SizedBox(
           width: 280,
           child: Text(
-            'Are you a Fashion Designer?',
+            'Instant Heart Rate',
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 24.sp, fontWeight: FontWeight.w600, color: textDark),
@@ -208,7 +206,7 @@ Widget page2() {
         SizedBox(
           width: 250,
           child: Text(
-            'Show off your designs and connect with potential customers.',
+            'No sensors needed. Get your heart rate instantly.',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 14.sp, color: textDarkAsh),
           ),
@@ -225,14 +223,13 @@ Widget page3() {
           height: 400.h,
           child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
-              child: Image.asset(
-                  'assets/Images/onboarding_images/gallery_slide (1).png')),
+              child: Image.asset('assets/heart-edited-Photoroom (1).png')),
         ),
         Gap(20.h),
         SizedBox(
           width: 280,
           child: Text(
-            'Looking for a Fashion Designer?',
+            'Know Your Pulse',
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 24.sp, fontWeight: FontWeight.w600, color: textDark),
@@ -242,7 +239,7 @@ Widget page3() {
         SizedBox(
           width: 250,
           child: Text(
-            'Connect with designers that will make your desired outfits.',
+            'Quick and convenient heart rate tracking on-the-go.',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 14.sp, color: textDarkAsh),
           ),
@@ -260,14 +257,13 @@ Widget page4() {
           height: 400.h,
           child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
-              child: Image.asset(
-                  'assets/Images/onboarding_images/gallery_slide (2).png')),
+              child: Image.asset('assets/heart-edited-Photoroom (2).png')),
         ),
         Gap(20.h),
         SizedBox(
           width: 280,
           child: Text(
-            'Get Stunning Fabrics',
+            'Heartbeat Camera',
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 24.sp, fontWeight: FontWeight.w600, color: textDark),
@@ -277,7 +273,7 @@ Widget page4() {
         SizedBox(
           width: 250,
           child: Text(
-            'Shop for fabrics that will make your outfit standout Now.',
+            'Use your phone\'s camera to measure your heart rate.',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 14.sp, color: textDarkAsh),
           ),

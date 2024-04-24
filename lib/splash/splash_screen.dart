@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:heart_beat_app/helpers/constants.dart';
 import 'package:heart_beat_app/onboarding/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -25,23 +23,30 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          transform: GradientRotation(2.5),
-          stops: [
-            0.1,
-            0.5,
-            0.9,
-          ],
-          colors: [
-            kPrimary,
-            kPrimaryLight,
-            kPrimary,
-          ],
+        decoration: const BoxDecoration(color: Colors.white
+
+            //   gradient: LinearGradient(
+            // begin: Alignment.topLeft,
+            // end: Alignment.bottomRight,
+            // transform: GradientRotation(2.5),
+            // stops: [
+            //   0.1,
+            //   0.5,
+            //   0.9,
+            // ],
+            // colors: [
+            //   kPrimary,
+            //   kPrimaryLight,
+            //   kPrimary,
+            // ],
+            // )
+            ),
+        child: Center(
+            child: Image.asset(
+          'assets/logo-plain.png',
+          height: 300,
+          width: 300,
         )),
-        child: Center(child: SvgPicture.asset('assets/icons/svg/logo.svg')),
       ),
     );
   }
