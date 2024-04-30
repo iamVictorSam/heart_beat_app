@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:heart_beat_app/helpers/constants.dart';
+import 'package:heart_beat_app/helpers/functions.dart';
 import 'package:heart_beat_app/rate_details/rate_details.dart';
 import 'package:heart_bpm/heart_bpm.dart';
 
@@ -18,7 +19,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<SensorValue> data = [];
   List<SensorValue> bpmValues = [];
-  List heartRate = [];
+  List<int> heartRate = [];
   //  Widget chart = BPMChart(data);
 
   bool isBPMEnabled = false;
@@ -49,8 +50,13 @@ class _HomePageState extends State<HomePage> {
           double sumValue = heartRate.fold(
               0, (previousValue, element) => previousValue + element);
           double averageValue = sumValue / heartRate.length;
+          List<int> highestAndLowest = getHighestAndLowest(heartRate);
+
           Get.to(() => RateDetails(
                 averageValue: averageValue,
+                highestValue: highestAndLowest[0],
+                lowestValue: highestAndLowest[1],
+                date: DateTime.now(),
               ));
         }
       });
@@ -61,10 +67,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
-      // appBar: AppBar(
-      //   backgroundColor: Colors.white,
-      //   title: const Text('Heart BPM Demo'),
-      // ),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        title: const Text('Heart BPM'),
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -118,7 +125,7 @@ class _HomePageState extends State<HomePage> {
                       // chart = BPMChart(data);
                     },
                     onBPM: (value) => setState(() {
-                      heartRate.add(value.toDouble());
+                      heartRate.add(value);
                       if (bpmValues.length >= 100) bpmValues.removeAt(0);
                       bpmValues.add(SensorValue(
                           value: value.toDouble(), time: DateTime.now()));

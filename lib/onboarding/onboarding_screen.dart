@@ -32,67 +32,67 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               colors: [Color(0xffEAE9F3), Colors.white],
             ),
           ),
-          child: SingleChildScrollView(
-            child: Column(children: [
-              // const SizedBox(height: (10)),
-              Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Container(
-                      decoration: const BoxDecoration(
-                        gradient: LinearGradient(
-                          stops: [
-                            0.1,
-                            0.5,
-                          ],
-                          begin: Alignment.topCenter,
-                          colors: [Color(0xffEAE9F3), Colors.white],
-                        ),
-                      ),
-                      child: SizedBox(
-                        height: Get.height * 0.7,
-                        child: PageView(
-                          physics: const ClampingScrollPhysics(),
-                          controller: _pageController,
-                          onPageChanged: (int page) {
-                            setState(() {
-                              _currentPage = page;
-                            });
-                          },
-                          children: <Widget>[
-                            page1(),
-                            page2(),
-                            page3(),
-                            page4(),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: _buildPageIndicator(),
-                    ),
-                    32.verticalSpace,
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 40.0),
-                      child: DefaultBtn(
-                        press: () {
-                          Get.off(() => const HomePage());
-                        },
-                        label: 'Get Started',
-                      ),
-                    ),
-                    // 16.horizontalSpace,
-                  ],
-                ),
+          child: Column(children: [
+            // const SizedBox(height: (10)),
+            const Spacer(),
+            Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
               ),
-            ]),
-          ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Container(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        stops: [
+                          0.1,
+                          0.5,
+                        ],
+                        begin: Alignment.topCenter,
+                        colors: [Color(0xffEAE9F3), Colors.white],
+                      ),
+                    ),
+                    child: SizedBox(
+                      height: Get.height * 0.7,
+                      child: PageView(
+                        physics: const ClampingScrollPhysics(),
+                        controller: _pageController,
+                        onPageChanged: (int page) {
+                          setState(() {
+                            _currentPage = page;
+                          });
+                        },
+                        children: <Widget>[
+                          page1(),
+                          page2(),
+                          page3(),
+                          page4(),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: _buildPageIndicator(),
+                  ),
+                  32.verticalSpace,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                    child: DefaultBtn(
+                      press: () {
+                        Get.off(() => const HomePage());
+                      },
+                      label: 'Get Started',
+                    ),
+                  ),
+                  // 16.horizontalSpace,
+                ],
+              ),
+            ),
+            const Spacer(),
+          ]),
         ),
       ),
     );
@@ -133,7 +133,7 @@ Widget page1() {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                   child: Image.asset(
-                    'assets/heart-edited-Photoroom (3).png',
+                    'assets/heart-phone-Photoroom-befunky.png',
                     width: Get.width,
                     fit: BoxFit.cover,
                   )),
@@ -224,7 +224,7 @@ Widget page3() {
           height: 400.h,
           child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
-              child: Image.asset('assets/heart-edited-Photoroom (1).png')),
+              child: Image.asset('assets/heart-edited-Photoroom-befunky.png')),
         ),
         Gap(20.h),
         SizedBox(
@@ -258,7 +258,7 @@ Widget page4() {
           height: 400.h,
           child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
-              child: Image.asset('assets/heart-edited-Photoroom (2).png')),
+              child: Image.asset('assets/heart-cam-Photoroom-befunky.png')),
         ),
         Gap(20.h),
         SizedBox(

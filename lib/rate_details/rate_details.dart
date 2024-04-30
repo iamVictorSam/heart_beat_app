@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heart_beat_app/helpers/constants.dart';
+import 'package:heart_beat_app/helpers/functions.dart';
 
 class RateDetails extends StatelessWidget {
-  const RateDetails({super.key, required this.averageValue});
+  const RateDetails(
+      {super.key,
+      required this.averageValue,
+      required this.highestValue,
+      required this.lowestValue,
+      required this.date});
 
   final double averageValue;
+  final int highestValue, lowestValue;
+  final DateTime date;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +22,7 @@ class RateDetails extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            20.verticalSpace,
+            const Spacer(),
             Center(
               child: CircleAvatar(
                 radius: 150,
@@ -51,6 +59,134 @@ class RateDetails extends StatelessWidget {
                 ),
               ),
             ),
+            const Spacer(),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 30),
+                    margin: const EdgeInsets.only(left: 16),
+                    decoration: BoxDecoration(
+                      color: kPrimaryLight,
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Min.',
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                          ),
+                        ),
+                        Text(
+                          lowestValue.toString(),
+                          style: TextStyle(
+                            fontSize: 25.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'BPM',
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                10.horizontalSpace,
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 30),
+                    margin: const EdgeInsets.only(right: 16),
+                    decoration: BoxDecoration(
+                      color: kPrimaryLight,
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Max.',
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                          ),
+                        ),
+                        Text(
+                          highestValue.toString(),
+                          style: TextStyle(
+                            fontSize: 25.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'BPM',
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            10.verticalSpace,
+            Container(
+              // height: ,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              margin: const EdgeInsets.symmetric(horizontal: 16),
+              decoration: BoxDecoration(
+                color: kPrimaryLight,
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Icon(Icons.heart_broken),
+                  20.horizontalSpace,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Heart Rate',
+                        style: TextStyle(
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      10.verticalSpace,
+                      Text(
+                        formatDateTime(date),
+                      )
+                    ],
+                  ),
+                  const Spacer(),
+                  Text.rich(
+                    TextSpan(
+                      text: '${averageValue.round()}',
+                      style: TextStyle(
+                        fontSize: 25.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      children: [
+                        TextSpan(
+                            text: ' BPM',
+                            style: TextStyle(
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w500,
+                            )),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Spacer(),
           ],
         ),
       ),
