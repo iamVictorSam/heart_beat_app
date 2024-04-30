@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:heart_beat_app/helpers/constants.dart';
+import 'package:heart_beat_app/home/home.dart';
 import 'package:heart_beat_app/widget/default_btn.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -81,7 +82,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       padding: const EdgeInsets.symmetric(horizontal: 40.0),
                       child: DefaultBtn(
                         press: () {
-                          // Get.off(() => const SignUpSelection());
+                          Get.off(() => const HomePage());
                         },
                         label: 'Get Started',
                       ),
