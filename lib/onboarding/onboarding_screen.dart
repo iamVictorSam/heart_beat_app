@@ -133,7 +133,7 @@ Widget page1() {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                   child: Image.asset(
-                    'assets/heart-phone-Photoroom-befunky.png',
+                    'assets/ipad.png',
                     width: Get.width,
                     fit: BoxFit.cover,
                   )),
@@ -188,7 +188,7 @@ Widget page2() {
           height: 400.h,
           child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 60),
-              child: Image.asset('assets/heart-edited-Photoroom.png')),
+              child: Image.asset('assets/heart.png')),
         ),
 
         // Placeholder()
@@ -224,7 +224,7 @@ Widget page3() {
           height: 400.h,
           child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
-              child: Image.asset('assets/heart-edited-Photoroom-befunky.png')),
+              child: Image.asset('assets/heart-edited.png')),
         ),
         Gap(20.h),
         SizedBox(
@@ -258,7 +258,7 @@ Widget page4() {
           height: 400.h,
           child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
-              child: Image.asset('assets/heart-cam-Photoroom-befunky.png')),
+              child: Image.asset('assets/cam.png')),
         ),
         Gap(20.h),
         SizedBox(
