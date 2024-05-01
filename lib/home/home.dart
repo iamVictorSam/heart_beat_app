@@ -107,16 +107,17 @@ class _HomePageState extends State<HomePage> {
           Visibility(
             visible: isBPMEnabled,
             child: Stack(
+              clipBehavior: Clip.none,
               children: [
                 Center(
                   child: HeartBPMDialog(
                     context: context,
-                    showTextValues: true,
-                    alpha: 1,
-                    cameraWidgetWidth: 300,
-                    cameraWidgetHeight: 300,
+                    showTextValues: false,
+                    // alpha: 1 ,
+                    cameraWidgetWidth: 200,
+                    cameraWidgetHeight: 200,
                     borderRadius: 300,
-                    sampleDelay: 500,
+                    // sampleDelay: 800,
                     onRawData: (value) {
                       setState(() {
                         if (data.length >= 100) data.removeAt(0);
@@ -149,14 +150,14 @@ class _HomePageState extends State<HomePage> {
                 //   )),
                 // ),
                 Positioned(
-                  top: -16,
+                  top: 0,
                   left: 0,
                   right: 0,
                   bottom: 0,
                   child: Center(
                     child: SizedBox(
-                      width: 296,
-                      height: 296,
+                      width: 200,
+                      height: 200,
                       child: CircularProgressIndicator(
                         value: _progress, // Set progress value
                         backgroundColor: kWhite,
@@ -201,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                             borderRadius: BorderRadius.circular(200)),
                       );
                     },
-                    size: 400,
+                    size: 300,
                   ),
                   Positioned(
                     top: 0,
@@ -210,11 +211,11 @@ class _HomePageState extends State<HomePage> {
                     right: 0,
                     child: Center(
                       child: CircleAvatar(
-                        radius: 110,
+                        radius: 100,
                         backgroundColor: kWhite,
                         child: CircleAvatar(
                           backgroundColor: kPrimary.withOpacity(0.9),
-                          radius: 100,
+                          radius: 90,
                           child: Text(
                             'Tap to start!',
                             style: TextStyle(
