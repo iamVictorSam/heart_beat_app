@@ -76,34 +76,6 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // isBPMEnabled && data.isNotEmpty
-          //     ? Container(
-          //         decoration: BoxDecoration(border: Border.all()),
-          //         height: 180,
-          //         child: BPMChart(data),
-          //       )
-          //     : const SizedBox(),
-          // isBPMEnabled && bpmValues.isNotEmpty
-          //     ? Container(
-          //         decoration: BoxDecoration(border: Border.all()),
-          //         constraints: const BoxConstraints.expand(height: 180),
-          //         child: BPMChart(bpmValues),
-          //       )
-          //     : const SizedBox(),
-          // Center(
-          //   child: ElevatedButton.icon(
-          //     icon: const Icon(Icons.favorite_rounded),
-          //     label: Text(isBPMEnabled ? "Stop measurement" : "Measure BPM"),
-          // onPressed: () => setState(() {
-          //   if (isBPMEnabled) {
-          //     isBPMEnabled = false;
-          //     // dialog.
-          //   } else {
-          //     isBPMEnabled = true;
-          //   }
-          // }),
-          //   ),
-          // ),
           Visibility(
             visible: isBPMEnabled,
             child: Stack(
@@ -131,24 +103,8 @@ class _HomePageState extends State<HomePage> {
                       bpmValues.add(SensorValue(
                           value: value.toDouble(), time: DateTime.now()));
                     }),
-                    // sampleDelay: 1000 ~/ 20,
-                    // child: Container(
-                    //   height: 50,
-                    //   width: 100,
-                    //   child: BPMChart(data),
-                    // ),
                   ),
                 ),
-                // const Positioned(
-                //   bottom: -20,
-                //   right: 0,
-                //   left: 0,
-                //   child: Center(
-                //       child: Text(
-                //     'Place index finger on rear camera',
-                //     style: TextStyle(),
-                //   )),
-                // ),
                 Positioned(
                   top: 0,
                   left: 0,
